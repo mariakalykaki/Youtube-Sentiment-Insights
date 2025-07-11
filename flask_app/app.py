@@ -50,17 +50,17 @@ def preprocess_comment(comment):
 
 
 
-# Load the model and vectorizer from the model registry and local storage
-# def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
-#     # Set MLflow tracking URI to your server
-#     mlflow.set_tracking_uri("http://ec2-54-167-108-249.compute-1.amazonaws.com:5000/")  # Replace with your MLflow tracking URI
-#     client = MlflowClient()
-#     model_uri = f"models:/{model_name}/{model_version}"
-#     model = mlflow.pyfunc.load_model(model_uri)
-#     with open(vectorizer_path, 'rb') as file:
-#         vectorizer = pickle.load(file)
+#Load the model and vectorizer from the model registry and local storage
+def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
+    # Set MLflow tracking URI to your server
+    mlflow.set_tracking_uri("http://ec2-13-48-6-126.eu-north-1.compute.amazonaws.com:5000/")  # Replace with your MLflow tracking URI
+    client = MlflowClient()
+    model_uri = f"models:/{model_name}/{model_version}"
+    model = mlflow.pyfunc.load_model(model_uri)
+    with open(vectorizer_path, 'rb') as file:
+        vectorizer = pickle.load(file)
    
-#     return model, vectorizer
+    return model, vectorizer
 
 
 
